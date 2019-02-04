@@ -1,0 +1,15 @@
+class KubeCapacity < Formula
+  desc "Reverse Lookup for Kubernetes RBAC"
+  homepage ""
+  url "https://github.com/robscott/kube-capacity/releases/download/0.1.0/kube-capacity_0.1.0_Darwin_x86_64.tar.gz"
+  version "0.1.0"
+  sha256 "63e839fb4afe1146c218a19bb03ba9619476ce97d9dffbabcf1a5069e91d3b98"
+
+  def install
+    bin.install "kube-capacity"
+  end
+
+  test do
+    system "#{bin}/kube-capacity version"
+  end
+end
