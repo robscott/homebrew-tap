@@ -7,11 +7,11 @@ class KubeCapacity < Formula
 
   if OS.mac?
     url "https://github.com/robscott/kube-capacity/releases/download/0.4.0/kube-capacity_0.4.0_Darwin_x86_64.tar.gz"
-    sha256 "62de6a14abb0ba968f08c20cad896fcc1845752f999b273491076c4fcd660a48"
+    sha256 "6d41d057fb56adf90c7ce8e521d063970f55e4c7e71d9eeb44d9eebc23d4e7eb"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/robscott/kube-capacity/releases/download/0.4.0/kube-capacity_0.4.0_Linux_x86_64.tar.gz"
-      sha256 "5cca1740e8e89e0ae29a931050075c6225532a0b12d7c6d6e4c0ad5b84a8de2d"
+      sha256 "5784b819447d823d29622084d86d2e5eca51f7c1c016db0ae17457a7d24c6cd1"
     end
   end
 
