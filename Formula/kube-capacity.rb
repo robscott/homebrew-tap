@@ -2,17 +2,16 @@
 class KubeCapacity < Formula
   desc "kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster"
   homepage ""
-  version "0.4.0"
+  version "0.5.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/robscott/kube-capacity/releases/download/0.4.0/kube-capacity_0.4.0_Darwin_x86_64.tar.gz"
-    sha256 "6d41d057fb56adf90c7ce8e521d063970f55e4c7e71d9eeb44d9eebc23d4e7eb"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/robscott/kube-capacity/releases/download/0.4.0/kube-capacity_0.4.0_Linux_x86_64.tar.gz"
-      sha256 "5784b819447d823d29622084d86d2e5eca51f7c1c016db0ae17457a7d24c6cd1"
-    end
+    url "https://github.com/robscott/kube-capacity/releases/download/v0.5.0/kube-capacity_0.5.0_Darwin_x86_64.tar.gz"
+    sha256 "1739aae07aa6d5a843ec666c78b987ee19601db2db1802da7dfed9d2a183c677"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/robscott/kube-capacity/releases/download/v0.5.0/kube-capacity_0.5.0_Linux_x86_64.tar.gz"
+    sha256 "ad6a29c4c715b5b7aaf28b434b3e9c7ff1bcc210385fb2efad9e862b93161915"
   end
 
   def install
