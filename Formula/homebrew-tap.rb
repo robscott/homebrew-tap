@@ -5,21 +5,21 @@
 class HomebrewTap < Formula
   desc "kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster"
   homepage "https://github.com/robscott/kube-capacity"
-  version "0.5.1"
+  version "0.6.0"
   license "apache-2.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/robscott/kube-capacity/releases/download/v0.5.1/kube-capacity_0.5.1_Darwin_x86_64.tar.gz"
-    sha256 "f2cae77f3dbd697aebcf7c16fe9b5976856c42f12d3ec573515e215015479ebe"
+    url "https://github.com/robscott/kube-capacity/releases/download/v0.6.0/kube-capacity_0.6.0_Darwin_x86_64.tar.gz"
+    sha256 "db9161dc99fd217e2f2d4b9c7423d28150a9f47ddce0f8ce8ba8d0c36de06ec3"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/robscott/kube-capacity/releases/download/v0.5.1/kube-capacity_0.5.1_Linux_x86_64.tar.gz"
-    sha256 "f9d06002b347bf0c1018ab54a055a3b5fc9429b15d23969b8b18c4254650fb7d"
+    url "https://github.com/robscott/kube-capacity/releases/download/v0.6.0/kube-capacity_0.6.0_Linux_x86_64.tar.gz"
+    sha256 "250ae3b2e179c569cdb10b875ed49863d678297d873bfd3d3520c2f8a3f3ebcc"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/robscott/kube-capacity/releases/download/v0.5.1/kube-capacity_0.5.1_Linux_arm64.tar.gz"
-    sha256 "79d53884f456373ca850fc40ae77b3dc22ceec2f2fb576d6cf996913afadb4c9"
+    url "https://github.com/robscott/kube-capacity/releases/download/v0.6.0/kube-capacity_0.6.0_Linux_arm64.tar.gz"
+    sha256 "fac0ef42c4b184905b8682f06b6be5b5715ddcec5af8a5cc1d7656c4accd6e83"
   end
 
   def install
