@@ -5,21 +5,30 @@
 class KubeCapacity < Formula
   desc "kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster"
   homepage "https://github.com/robscott/kube-capacity"
-  version "0.6.0"
+  version "0.6.1"
   license "apache-2.0"
   bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/robscott/kube-capacity/releases/download/v0.6.0/kube-capacity_0.6.0_Darwin_x86_64.tar.gz"
-    sha256 "db9161dc99fd217e2f2d4b9c7423d28150a9f47ddce0f8ce8ba8d0c36de06ec3"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/robscott/kube-capacity/releases/download/v0.6.1/kube-capacity_0.6.1_Darwin_x86_64.tar.gz"
+      sha256 "2478837131619660a0a1a642d97d7eb7add1bf3a3d5fbffcb9b04deb38de7b44"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/robscott/kube-capacity/releases/download/v0.6.1/kube-capacity_0.6.1_Darwin_arm64.tar.gz"
+      sha256 "8de14f756ac621c727417fb103c54b987a12e3debc9aa162b8af440883a752cc"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/robscott/kube-capacity/releases/download/v0.6.0/kube-capacity_0.6.0_Linux_x86_64.tar.gz"
-    sha256 "250ae3b2e179c569cdb10b875ed49863d678297d873bfd3d3520c2f8a3f3ebcc"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/robscott/kube-capacity/releases/download/v0.6.0/kube-capacity_0.6.0_Linux_arm64.tar.gz"
-    sha256 "fac0ef42c4b184905b8682f06b6be5b5715ddcec5af8a5cc1d7656c4accd6e83"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/robscott/kube-capacity/releases/download/v0.6.1/kube-capacity_0.6.1_Linux_x86_64.tar.gz"
+      sha256 "41cb861913ee9efd624b401f40d292b2fc344b455c9d971fe685b80a65162625"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/robscott/kube-capacity/releases/download/v0.6.1/kube-capacity_0.6.1_Linux_arm64.tar.gz"
+      sha256 "cdda0664639c79fe9ebe479a082f8e5578545c545a38d9324d90f41fd19a38b4"
+    end
   end
 
   def install
