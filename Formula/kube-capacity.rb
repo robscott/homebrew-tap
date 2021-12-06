@@ -5,34 +5,45 @@
 class KubeCapacity < Formula
   desc "kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster"
   homepage "https://github.com/robscott/kube-capacity"
-  version "0.6.1"
+  version "0.6.2"
   license "apache-2.0"
-  bottle :unneeded
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/robscott/kube-capacity/releases/download/v0.6.1/kube-capacity_0.6.1_Darwin_x86_64.tar.gz"
-      sha256 "2478837131619660a0a1a642d97d7eb7add1bf3a3d5fbffcb9b04deb38de7b44"
-    end
     if Hardware::CPU.arm?
-      url "https://github.com/robscott/kube-capacity/releases/download/v0.6.1/kube-capacity_0.6.1_Darwin_arm64.tar.gz"
-      sha256 "8de14f756ac621c727417fb103c54b987a12e3debc9aa162b8af440883a752cc"
+      url "https://github.com/robscott/kube-capacity/releases/download/v0.6.2/kube-capacity_0.6.2_Darwin_arm64.tar.gz"
+      sha256 "4e921ce4b07be63b9e72b4572ce901ed5ddf8e218c1c3c08353db7af02c3be71"
+
+      def install
+        bin.install "kube-capacity"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/robscott/kube-capacity/releases/download/v0.6.2/kube-capacity_0.6.2_Darwin_x86_64.tar.gz"
+      sha256 "df3d8c0d3c424bcbb3fb4f5962cbea02121efc07e03a44e2f27ddaa0a9759103"
+
+      def install
+        bin.install "kube-capacity"
+      end
     end
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/robscott/kube-capacity/releases/download/v0.6.1/kube-capacity_0.6.1_Linux_x86_64.tar.gz"
-      sha256 "41cb861913ee9efd624b401f40d292b2fc344b455c9d971fe685b80a65162625"
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/robscott/kube-capacity/releases/download/v0.6.1/kube-capacity_0.6.1_Linux_arm64.tar.gz"
-      sha256 "cdda0664639c79fe9ebe479a082f8e5578545c545a38d9324d90f41fd19a38b4"
-    end
-  end
+      url "https://github.com/robscott/kube-capacity/releases/download/v0.6.2/kube-capacity_0.6.2_Linux_arm64.tar.gz"
+      sha256 "9f43802663c2616cef629b2b3e5eb21934a09606c936e788f47439011eabbd16"
 
-  def install
-    bin.install "kube-capacity"
+      def install
+        bin.install "kube-capacity"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/robscott/kube-capacity/releases/download/v0.6.2/kube-capacity_0.6.2_Linux_x86_64.tar.gz"
+      sha256 "65da55bbcd75fa870b3e5cb2a01d86c0abaf8b355b8acfd573f85581d32fe48e"
+
+      def install
+        bin.install "kube-capacity"
+      end
+    end
   end
 
   test do
