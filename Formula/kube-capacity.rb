@@ -5,21 +5,21 @@
 class KubeCapacity < Formula
   desc "kube-capacity provides an overview of the resource requests, limits, and utilization in a Kubernetes cluster"
   homepage "https://github.com/robscott/kube-capacity"
-  version "0.7.4-rc7"
+  version "0.7.4"
   license "apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/robscott/kube-capacity/releases/download/v0.7.4-rc7/kube-capacity_v0.7.4-rc7_darwin_arm64.tar.gz"
-      sha256 "4e1f9dda31e2174e814fad0723c20069c3446e385aa004458f1c851047de8238"
+      url "https://github.com/robscott/kube-capacity/releases/download/v0.7.4/kube-capacity_v0.7.4_darwin_arm64.tar.gz"
+      sha256 "6a87bbd0b3dce2529df916294d483a6285380cdfe6e3841c97e3dd40636323c8"
 
       def install
         bin.install "kube-capacity"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/robscott/kube-capacity/releases/download/v0.7.4-rc7/kube-capacity_v0.7.4-rc7_darwin_x86_64.tar.gz"
-      sha256 "1d9b93e0dcf61c67414143491cd2e00dde639af1bb4adc9663c24c8c4fb19da5"
+      url "https://github.com/robscott/kube-capacity/releases/download/v0.7.4/kube-capacity_v0.7.4_darwin_x86_64.tar.gz"
+      sha256 "33f647ce3c84bb16f3db3462ae403606f7c9c41c11cd20b77ee0bfacf31f976f"
 
       def install
         bin.install "kube-capacity"
@@ -29,16 +29,16 @@ class KubeCapacity < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/robscott/kube-capacity/releases/download/v0.7.4-rc7/kube-capacity_v0.7.4-rc7_linux_arm64.tar.gz"
-      sha256 "545f2af50237f7ac14e9950348c0fd6c6a921ee1211a1e8c71d487f4b6195039"
+      url "https://github.com/robscott/kube-capacity/releases/download/v0.7.4/kube-capacity_v0.7.4_linux_arm64.tar.gz"
+      sha256 "b71cb421f897c78bef6c2c7b6f8751ae6df4c8eb2e4365e242724a73149fbbf7"
 
       def install
         bin.install "kube-capacity"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/robscott/kube-capacity/releases/download/v0.7.4-rc7/kube-capacity_v0.7.4-rc7_linux_x86_64.tar.gz"
-      sha256 "eea92fb177402c6f9f2fd58266b2a9ce9a23abd8b205306ac943de36712cb247"
+      url "https://github.com/robscott/kube-capacity/releases/download/v0.7.4/kube-capacity_v0.7.4_linux_x86_64.tar.gz"
+      sha256 "caa167b00bc33fe0fc306ba84d422bd1fc38aaa50f5b61214b66679062de9ef1"
 
       def install
         bin.install "kube-capacity"
